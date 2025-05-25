@@ -1,0 +1,313 @@
+/* Basic styles */
+:root {
+  --foreground: #000000;
+  --background: #ffffff;
+  --cream-50: #FFFEF8;
+  --cream-100: #FFFDF0;
+  --cream-200: #FFF8D6;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--foreground);
+  background-color: var(--background);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  letter-spacing: 0.015em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Layout */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.text-black {
+  color: black;
+}
+
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--cream-200);
+  color: #062949 !important;
+}
+
+.selection\:bg-cream-200::selection {
+  background-color: var(--cream-200);
+}
+
+.selection\:text-black::selection {
+  color: #062949 !important;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+  margin-bottom: 1.25rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.01em;
+  word-spacing: 0.05em;
+}
+
+/* Text spacing */
+.text-sm, .text-lg, .text-xl, .text-2xl, .text-3xl, .text-4xl, .text-5xl, .text-6xl, .text-7xl {
+  letter-spacing: 0.01em;
+  word-spacing: 0.05em;
+  line-height: 1.5;
+}
+
+/* Spacing */
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Buttons */
+.btn, a[href]:not(nav a) {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border: 1px solid black;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  color: inherit;
+  letter-spacing: 0.03em;
+  word-spacing: 0.1em;
+}
+
+.btn:hover, a[href]:not(nav a):hover {
+  background-color: black;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  letter-spacing: 0.02em;
+  word-spacing: 0.05em;
+}
+
+nav a:hover {
+  color: #555;
+}
+
+/* Utility Classes */
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* Custom components */
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Content Sections */
+.content-section {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .content-section {
+    padding: 3rem 2rem;
+  }
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Navigation styles */
+.hover-underline {
+  position: relative;
+}
+
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -3px;
+  left: 0;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+/* Footer specific styles - more specific selectors to override any other styles */
+footer a, 
+footer a[href],
+footer ul a,
+footer ul a[href],
+footer .text-gray-600,
+footer h3 + ul a,
+footer h3 + ul a[href],
+footer li a,
+footer li a[href],
+footer .hover-underline,
+footer .text-sm,
+footer a.text-sm,
+footer a.text-xs,
+footer [class*="text-gray"],
+footer .font-medium + ul li a {
+  display: inline-block;
+  border: none !important;
+  background: none !important;
+  padding: 0 !important;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+footer a:hover, 
+footer a[href]:hover,
+footer ul a:hover,
+footer ul a[href]:hover,
+footer .text-gray-600:hover,
+footer h3 + ul a:hover,
+footer h3 + ul a[href]:hover,
+footer li a:hover,
+footer li a[href]:hover,
+footer .hover-underline:hover,
+footer .text-sm:hover,
+footer a.text-sm:hover,
+footer a.text-xs:hover,
+footer [class*="text-gray"]:hover,
+footer .font-medium + ul li a:hover {
+  background-color: transparent !important;
+  color: #000;
+  transform: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Preserve button styling only for actual buttons */
+footer .btn {
+  display: inline-block;
+  padding: 0.75rem 2rem !important;
+  border: 1px solid black !important;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  color: inherit;
+}
+
+footer .btn:hover {
+  background-color: black !important;
+  color: white;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+} 

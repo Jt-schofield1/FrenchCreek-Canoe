@@ -1,0 +1,391 @@
+@import "tailwindcss";
+
+/* Basic styles */
+:root {
+  --foreground: #062949;
+  --background: #ffffff;
+  --navy: #062949;
+  --navy-muted: #4A6380;
+  --green: #0E7118;
+  --creek: #0F65C8;
+  --gold: #F1A417;
+  --orange: #E08000;
+  --cream-50: #fffdf5;
+  --cream-100: #fff9e6;
+  --cream-200: #fff2cc;
+  --cream-300: #ffe6b3;
+  --cream-400: #ffd980;
+  --cream-500: #F1A417;
+  --cream-600: #E08000;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--navy);
+  background-color: var(--background);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* Layout */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  margin-top: 0;
+  color: var(--navy);
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+/* Improved contrast text classes */
+.text-white {
+  color: #ffffff !important;
+}
+
+.text-navy-muted {
+  color: #4A6380 !important; /* Darker shade for better contrast */
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.75rem;
+  padding: 0 2rem;
+  border: 2px solid var(--gold);
+  background-color: var(--gold);
+  color: var(--navy);
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Black border override */
+.btn.border-black {
+  border-color: black !important;
+}
+
+/* Custom black border class */
+.black-border {
+  border: 1px solid black !important;
+}
+
+/* Special Explore button styling */
+.btn.black-border:hover {
+  background-color: black;
+  color: white !important;
+  border-color: black !important;
+}
+
+.btn:hover {
+  background-color: #000;
+  color: white !important;
+  border-color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Navy background buttons */
+.bg-navy .btn {
+  border: 2px solid var(--gold);
+  background-color: var(--gold);
+  color: var(--navy);
+}
+
+.bg-navy .btn:hover {
+  background-color: #000;
+  color: white !important;
+  border-color: #000;
+}
+
+/* Gold buttons - keeping for backward compatibility */
+.btn.bg-gold {
+  background-color: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
+}
+
+.btn.bg-gold:hover {
+  background-color: #000;
+  border-color: #000;
+  color: white !important;
+}
+
+/* Image frame styling */
+.img-frame {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(6, 41, 73, 0.1);
+  transition: all 0.4s ease;
+}
+
+.img-frame:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(6, 41, 73, 0.15);
+}
+
+.img-frame::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.img-frame:hover::after {
+  opacity: 1;
+  top: -8px;
+  left: -8px;
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
+}
+
+/* Hover underline animations */
+.hover-underline-gold, .hover-underline-creek {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 2.75rem;
+  padding: 0 1rem;
+}
+
+.hover-underline-gold::after, .hover-underline-creek::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.hover-underline-gold::after {
+  background-color: var(--gold);
+}
+
+.hover-underline-creek::after {
+  background-color: var(--creek);
+}
+
+.hover-underline-gold:hover::after, .hover-underline-creek:hover::after {
+  width: 100%;
+}
+
+/* Customized button for navy backgrounds */
+.btn-gold {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.btn-gold:hover {
+  background-color: var(--gold);
+  color: var(--navy);
+}
+
+/* Link hover states */
+a.text-creek:hover {
+  color: var(--creek) !important;
+}
+
+a.text-navy:hover {
+  color: var(--navy) !important;
+}
+
+a.text-navy-muted:hover {
+  color: var(--navy-muted) !important;
+}
+
+/* Navigation hover states */
+.hover-underline-gold:hover {
+  color: var(--gold) !important;
+}
+
+.hover-underline-creek:hover {
+  color: var(--creek) !important;
+}
+
+/* Group hover for section cards */
+.group:hover h3,
+.group:hover p {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+/* Navigation styles */
+.nav-container {
+  position: relative;
+  z-index: 100;
+  display: flex;
+}
+
+.nav-container a {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+/* Glassmorphism */
+.glass-panel {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Animated gradient */
+@keyframes gradientSpin {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-border {
+  background: linear-gradient(90deg, var(--gold), var(--creek), var(--green), var(--navy), var(--gold));
+  background-size: 400% 400%;
+  animation: gradientSpin 8s ease infinite;
+}
+
+/* Enhanced button animations */
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  z-index: 0;
+}
+
+.btn:hover::after {
+  transform: translateX(0);
+}
+
+.btn .btn-text {
+  position: relative;
+  z-index: 1;
+  color: inherit;
+}
+
+.btn:hover .btn-text {
+  color: white !important;
+}
+
+/* Text selection styles with maximum specificity */
+html body *::selection {
+  background-color: var(--cream-200) !important;
+  color: var(--navy) !important;
+}
+
+html body section *::selection {
+  background-color: var(--cream-200) !important;
+  color: var(--navy) !important;
+}
+
+/* Navy background specific selection styles */
+.bg-navy *::selection,
+section[class*="bg-navy"] *::selection,
+div[class*="bg-navy"] *::selection,
+.navy *::selection,
+[class*="bg-navy"] p::selection,
+[class*="bg-navy"] div::selection,
+[class*="bg-navy"] span::selection,
+[class*="bg-navy"] h1::selection,
+[class*="bg-navy"] h2::selection,
+[class*="bg-navy"] h3::selection,
+[class*="bg-navy"] h4::selection,
+[class*="bg-navy"] h5::selection,
+[class*="bg-navy"] h6::selection,
+[class*="bg-navy"] li::selection,
+[class*="bg-navy"] a::selection,
+section.bg-navy p::selection,
+section.bg-navy div::selection,
+section.bg-navy span::selection {
+  background-color: var(--gold) !important;
+  color: var(--navy) !important;
+}
+
+/* Extra specific selector for ContentSection component */
+section.bg-navy .text-white::selection,
+.text-white::selection {
+  background-color: var(--gold) !important;
+  color: var(--navy) !important;
+}
+
+/* Existing selection styles */
+::selection {
+  background-color: var(--cream-200);
+  color: var(--navy) !important; /* Force navy text when selected to match other text */
+}
+
+/* Content section specific selection styles */
+section p::selection,
+section div::selection,
+section span::selection,
+section h1::selection,
+section h2::selection,
+section h3::selection,
+section h4::selection,
+section h5::selection,
+section h6::selection,
+section li::selection,
+section a::selection {
+  background-color: var(--cream-200);
+  color: var(--navy) !important; /* Match navy text in content sections */
+}
