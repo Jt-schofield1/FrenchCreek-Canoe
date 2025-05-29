@@ -118,46 +118,62 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
               <X className="w-6 h-6 text-gray-600" />
             </button>
 
-            {/* Event Image */}
-            <div className="relative h-80 overflow-hidden">
-              <img 
-                src={event.image} 
-                alt={event.title} 
-                className={`w-full h-full object-cover ${
-                  event.image.includes('nspire') 
-                    ? 'object-center' 
-                    : event.image.includes('opening')
-                    ? 'object-bottom'
-                    : 'object-center'
-                }`}
-                style={
-                  event.image.includes('nspire') 
-                    ? { transform: 'translateY(20px) scale(0.8)' }
-                    : event.image.includes('opening')
+            {/* Event Image - Hide completely for N-SpireDesign event */}
+            {!event.title.includes('N-SpireDesign') && !event.title.includes('Art Workshop') && (
+              <div className="relative h-80 overflow-hidden">
+                <img 
+                  src={event.image} 
+                  alt={event.title} 
+                  className={`w-full h-full object-cover ${
+                    event.image.includes('opening')
+                      ? 'object-bottom'
+                      : 'object-center'
+                  }`}
+                  style={
+                    event.image.includes('opening')
                     ? { transform: 'translateY(-10px) scale(0.85)' }
                     : {}
-                }
-              />
-              
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-              
-              {/* Category Badge */}
-              <div className="absolute top-6 left-6">
-                <span className={`px-4 py-2 rounded-full text-sm font-medium ${categoryColors[event.category]}`}>
-                  {categoryEmojis[event.category]} {capitalizeCategory(event.category)}
-                </span>
-              </div>
-
-              {/* Featured Badge */}
-              {event.featured && (
-                <div className="absolute top-6 left-6 mt-12">
-                  <span className="bg-gold text-navy px-4 py-2 rounded-full text-sm font-bold">
-                    ⭐ Featured Event
+                  }
+                />
+                
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                
+                {/* Category Badge */}
+                <div className="absolute top-6 left-6">
+                  <span className={`px-4 py-2 rounded-full text-sm font-medium ${categoryColors[event.category]}`}>
+                    {categoryEmojis[event.category]} {capitalizeCategory(event.category)}
                   </span>
                 </div>
-              )}
-            </div>
+
+                {/* Featured Badge */}
+                {event.featured && (
+                  <div className="absolute top-6 left-6 mt-12">
+                    <span className="bg-gold text-navy px-4 py-2 rounded-full text-sm font-bold">
+                      ⭐ Featured Event
+                    </span>
+                  </div>
+                )}
+              </div>
+            )}
+            
+            {/* For N-SpireDesign, just show category badge without image */}
+            {(event.title.includes('N-SpireDesign') || event.title.includes('Art Workshop')) && (
+              <div className="p-6 pt-16">
+                <div>
+                  <span className={`px-4 py-2 rounded-full text-sm font-medium ${categoryColors[event.category]}`}>
+                    {categoryEmojis[event.category]} {capitalizeCategory(event.category)}
+                  </span>
+                </div>
+                {event.featured && (
+                  <div className="mt-4">
+                    <span className="bg-gold text-navy px-4 py-2 rounded-full text-sm font-bold">
+                      ⭐ Featured Event
+                    </span>
+                  </div>
+                )}
+              </div>
+            )}
 
             {/* Content */}
             <div className="p-8">

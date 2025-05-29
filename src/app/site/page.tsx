@@ -206,7 +206,7 @@ export default function HomePage() {
                   <img src="/images/creek-history/settlers-bridge.jpg" alt="Historical Artifacts" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/80 to-navy/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <div className="flex justify-between items-end">
+                <div className="flex justify-between items-end group-hover:[&>div>h3]:!text-white group-hover:[&>div>p]:!text-white">
                   <div>
                     <h3 className="text-xl font-medium mb-2 text-navy group-hover:text-white transition-colors duration-300">Trading Post</h3>
                     <p className="text-navy font-medium group-hover:text-white transition-colors duration-300">Explore our trading post with unique items and local products.</p>
@@ -231,7 +231,7 @@ export default function HomePage() {
                   <img src="/images/vendors/french-creek-candles.jpg" alt="French Creek Candles" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/80 to-navy/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <div className="flex justify-between items-end">
+                <div className="flex justify-between items-end group-hover:[&>div>h3]:!text-white group-hover:[&>div>p]:!text-white">
                   <div>
                     <h3 className="text-xl font-medium mb-2 text-navy group-hover:text-white transition-colors duration-300">Local Vendors</h3>
                     <p className="text-navy font-medium group-hover:text-white transition-colors duration-300">Meet our local artisans and discover their handcrafted goods.</p>

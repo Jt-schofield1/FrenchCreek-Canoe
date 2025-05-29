@@ -52,9 +52,9 @@ export default function VendorModal({ vendor, isOpen, onClose }: VendorModalProp
           />
           
           {/* Modal */}
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-50 flex items-start justify-center p-4 pt-16 sm:pt-24">
             <motion.div
-              className="relative bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-auto"
+              className="relative bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[80vh] overflow-auto"
               initial={{ y: 50, opacity: 0, scale: 0.95 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
               exit={{ y: 50, opacity: 0, scale: 0.95 }}
@@ -66,7 +66,7 @@ export default function VendorModal({ vendor, isOpen, onClose }: VendorModalProp
                 onClick={onClose}
                 className="absolute top-4 right-4 z-10 p-2 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-colors"
               >
-                <X className="w-5 h-5 text-navy" />
+                <X className="w-6 h-6 text-navy" />
               </button>
               
               {/* Content */}
