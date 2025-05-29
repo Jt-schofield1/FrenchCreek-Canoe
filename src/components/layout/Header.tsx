@@ -58,7 +58,7 @@ export default function Header({ logoSrc, links }: HeaderProps) {
   
   return (
     <header 
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${
         scrolled 
           ? 'py-3 bg-navy shadow-md backdrop-blur-sm bg-opacity-95' 
           : 'py-6 bg-white shadow-sm'
@@ -67,7 +67,7 @@ export default function Header({ logoSrc, links }: HeaderProps) {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Logo - Visible on all devices */}
-          <Link href="/site" className="relative z-10">
+          <Link href="/site" className="relative z-[100]">
             <Image 
               src={logoSrc} 
               alt="French Creek Trading Post" 
@@ -77,10 +77,11 @@ export default function Header({ logoSrc, links }: HeaderProps) {
               className={`h-auto w-[120px] sm:w-[150px] md:w-[180px] transition-all duration-300 ${
                 scrolled ? 'scale-90' : 'scale-100'
               }`}
+              style={{ border: 'none', outline: 'none', boxShadow: 'none' }}
             />
           </Link>
           
-          {/* Desktop Navigation - ONLY visible on medium screens and up */}
+          {/* ONLY Desktop Navigation (md and up) */}
           <nav className="hidden md:block">
             <ul className="flex items-center space-x-12">
               {links.map((link) => {
@@ -99,16 +100,16 @@ export default function Header({ logoSrc, links }: HeaderProps) {
             </ul>
           </nav>
           
-          {/* Mobile Menu Button - ONLY visible on small screens */}
+          {/* ONLY Mobile Menu Button - Explicitly sized and positioned */}
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="block md:hidden z-20 p-2 rounded-lg bg-gold text-navy"
+            className="block md:hidden z-[100] p-2 rounded-lg bg-gold text-navy w-12 h-12 flex items-center justify-center"
             aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
           >
             {isMenuOpen ? (
-              <XMarkIcon className="h-6 w-6" />
+              <XMarkIcon className="h-7 w-7" />
             ) : (
-              <Bars3Icon className="h-6 w-6" />
+              <Bars3Icon className="h-7 w-7" />
             )}
           </button>
         </div>
@@ -118,7 +119,7 @@ export default function Header({ logoSrc, links }: HeaderProps) {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div 
-            className="fixed inset-0 bg-white pt-24 z-10 md:hidden"
+            className="fixed inset-0 bg-white pt-24 z-[90] md:hidden"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
