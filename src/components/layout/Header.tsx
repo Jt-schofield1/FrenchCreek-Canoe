@@ -64,7 +64,7 @@ export default function Header({ logoSrc, links }: HeaderProps) {
           : 'py-6 bg-white shadow-sm'
       }`}
     >
-      <div className="max-w-7xl mx-auto flex justify-start items-center gap-60 px-4 md:px-8">
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -86,9 +86,30 @@ export default function Header({ logoSrc, links }: HeaderProps) {
           </Link>
         </motion.div>
         
-                        {/* Desktop Navigation */}        <nav className="hidden md:flex nav-container space-x-12 z-50">          {links.map((link, index) => {            const isActive = pathname === link.href;            return (              <div                key={link.href}                className="relative z-50"              >                <Link                   href={link.href}                  className={getLinkStyles(isActive)}                >                  {link.label}                </Link>              </div>            );          })}        </nav>
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex nav-container space-x-12 z-50">
+          {links.map((link, index) => {
+            const isActive = pathname === link.href;
+            return (
+              <div
+                key={link.href}
+                className="relative z-50"
+              >
+                <Link 
+                  href={link.href}
+                  className={getLinkStyles(isActive)}
+                >
+                  {link.label}
+                </Link>
+              </div>
+            );
+          })}
+        </nav>
         
-                {/* Mobile Menu Button */}        <motion.button           onClick={() => setIsMenuOpen(!isMenuOpen)}          className="md:hidden z-20 focus:outline-none p-4 border-2 border-navy rounded-lg bg-white shadow-lg ml-auto text-navy"
+        {/* Mobile Menu Button */}
+        <motion.button 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden z-20 focus:outline-none p-3 border-2 border-navy rounded-lg bg-white shadow-lg text-navy"
           aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -103,7 +124,7 @@ export default function Header({ logoSrc, links }: HeaderProps) {
                 exit={{ rotate: 90, opacity: 0 }}
                 transition={{ duration: 0.2 }}
               >
-                <XMarkIcon className="h-8 w-8 sm:h-6 sm:w-6" />
+                <XMarkIcon className="h-6 w-6" />
               </motion.div>
             ) : (
               <motion.div
@@ -113,13 +134,59 @@ export default function Header({ logoSrc, links }: HeaderProps) {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
               >
-                <Bars3Icon className="h-8 w-8 sm:h-6 sm:w-6" />
+                <Bars3Icon className="h-6 w-6" />
               </motion.div>
             )}
           </AnimatePresence>
         </motion.button>
         
-                {/* Mobile Dropdown Menu */}        <AnimatePresence>          {isMenuOpen && (            <motion.div               className="absolute top-full left-0 right-0 md:hidden bg-white shadow-xl border-t border-gray-100 z-40"              initial={{ opacity: 0, y: -20, height: 0 }}              animate={{ opacity: 1, y: 0, height: "auto" }}              exit={{ opacity: 0, y: -20, height: 0 }}              transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}            >              <div className="py-4 px-4">                <nav className="flex flex-col space-y-1">                  {links.map((link, i) => {                    const isActive = pathname === link.href;                    return (                      <motion.div                        key={link.href}                        initial={{ opacity: 0, x: -20 }}                        animate={{ opacity: 1, x: 0 }}                        transition={{ duration: 0.3, delay: i * 0.1 }}                      >                        <Link                           href={link.href}                          className={`block px-4 py-3 rounded-lg text-base font-medium tracking-wide transition-all duration-200 ${                            isActive                               ? 'bg-gold text-navy shadow-sm'                               : 'text-navy hover:bg-cream-50 hover:text-gold'                          }`}                          onClick={() => setIsMenuOpen(false)}                        >                          {link.label}                        </Link>                      </motion.div>                    );                  })}                </nav>              </div>                            {/* Bottom accent bar */}              <motion.div                 className="h-1 bg-gradient-to-r from-gold via-orange to-creek"                initial={{ scaleX: 0 }}                animate={{ scaleX: 1 }}                transition={{ duration: 0.5, delay: 0.2 }}              />            </motion.div>          )}        </AnimatePresence>
+        {/* Mobile Dropdown Menu */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div 
+              className="absolute top-full left-0 right-0 md:hidden bg-white shadow-xl border-t border-gray-100 z-40"
+              initial={{ opacity: 0, y: -20, height: 0 }}
+              animate={{ opacity: 1, y: 0, height: "auto" }}
+              exit={{ opacity: 0, y: -20, height: 0 }}
+              transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+            >
+              <div className="py-4 px-4">
+                <nav className="flex flex-col space-y-1">
+                  {links.map((link, i) => {
+                    const isActive = pathname === link.href;
+                    return (
+                      <motion.div
+                        key={link.href}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.3, delay: i * 0.1 }}
+                      >
+                        <Link 
+                          href={link.href}
+                          className={`block px-4 py-3 rounded-lg text-base font-medium tracking-wide transition-all duration-200 ${
+                            isActive
+                              ? 'bg-gold text-navy shadow-sm'
+                              : 'text-navy hover:bg-cream-50 hover:text-gold'
+                          }`}
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {link.label}
+                        </Link>
+                      </motion.div>
+                    );
+                  })}
+                </nav>
+              </div>
+              {/* Bottom accent bar */}
+              <motion.div 
+                className="h-1 bg-gradient-to-r from-gold via-orange to-creek"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </header>
   );
