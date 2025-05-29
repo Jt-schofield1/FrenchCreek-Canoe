@@ -136,8 +136,7 @@ export default function HomePage() {
                     className="btn w-full sm:w-auto hover:scale-105 transition-all group relative px-6 sm:px-8"
                   >
                     <span className="btn-text">
-                      <span className="sm:hidden">Visit</span>
-                      <span className="hidden sm:inline">Visit Us</span>
+                      Visit Us
                     </span>
                     <motion.span 
                       className="absolute right-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all"
@@ -150,8 +149,7 @@ export default function HomePage() {
                     className="btn w-full sm:w-auto hover:scale-105 transition-all group relative px-6 sm:px-8"
                   >
                     <span className="btn-text">
-                      <span className="sm:hidden">Learn</span>
-                      <span className="hidden sm:inline">Learn More</span>
+                      Learn More
                     </span>
                     <motion.span 
                       className="absolute right-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all"

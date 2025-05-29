@@ -65,27 +65,21 @@ export default function Header({ logoSrc, links }: HeaderProps) {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="flex justify-between items-center">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="relative"
-          >
-            <Link href="/site" className="z-10 focus:outline-none block border-0" style={{ border: 'none', outline: 'none' }}>
-              <div className="relative">
-                <Image 
-                  src={logoSrc} 
-                  alt="French Creek Trading Post" 
-                  width={180} 
-                  height={90} 
-                  priority
-                  className={`h-auto w-[120px] sm:w-[150px] md:w-[180px] transition-all duration-300 border-0 outline-none ${scrolled ? 'scale-90' : 'scale-100'}`}
-                  style={{ border: 'none', outline: 'none', boxShadow: 'none' }}
-                />
-              </div>
-            </Link>
-          </motion.div>
+        <div className="flex justify-between items-center w-full">
+          {/* Logo */}
+          <Link href="/site" className="z-10 focus:outline-none block border-0" style={{ border: 'none', outline: 'none' }}>
+            <div className="relative">
+              <Image 
+                src={logoSrc} 
+                alt="French Creek Trading Post" 
+                width={180} 
+                height={90} 
+                priority
+                className={`h-auto w-[120px] sm:w-[150px] md:w-[180px] transition-all duration-300 border-0 outline-none ${scrolled ? 'scale-90' : 'scale-100'}`}
+                style={{ border: 'none', outline: 'none', boxShadow: 'none' }}
+              />
+            </div>
+          </Link>
           
           {/* Desktop Navigation - ONLY shows on md and up */}
           <nav className="hidden md:flex space-x-12">
