@@ -87,7 +87,7 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 flex items-start justify-center pt-24 p-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -104,7 +104,7 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
 
           {/* Modal Content */}
           <motion.div
-            className="relative bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            className="relative bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[80vh] overflow-y-auto"
             initial={{ opacity: 0, scale: 0.9, y: 50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 50 }}
@@ -113,9 +113,9 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-6 right-6 z-20 p-2 bg-white/90 hover:bg-white rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+              className="absolute top-6 right-6 z-20 p-3 bg-white/90 hover:bg-white rounded-full shadow-lg transition-all duration-300 hover:scale-110"
             >
-              <X className="w-6 h-6 text-gray-600" />
+              <X className="w-7 h-7 text-gray-600" />
             </button>
 
             {/* Event Image - Hide completely for N-SpireDesign event */}
@@ -291,7 +291,7 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
           <AnimatePresence>
             {showPhonePopup && (
               <motion.div
-                className="fixed inset-0 z-[60] flex items-center justify-center p-4"
+                className="fixed inset-0 z-[60] flex items-start justify-center pt-24 p-4"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -317,9 +317,9 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
                   {/* Close Button */}
                   <button
                     onClick={() => setShowPhonePopup(false)}
-                    className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
+                    className="absolute top-4 right-4 p-3 hover:bg-gray-100 rounded-full transition-colors duration-200"
                   >
-                    <X className="w-5 h-5 text-gray-600" />
+                    <X className="w-6 h-6 text-gray-600" />
                   </button>
 
                   {/* Phone Icon */}
