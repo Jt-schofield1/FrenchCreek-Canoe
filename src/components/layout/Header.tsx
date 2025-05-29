@@ -64,7 +64,7 @@ export default function Header({ logoSrc, links }: HeaderProps) {
           : 'py-6 bg-white shadow-sm'
       }`}
     >
-      <div className="max-w-7xl mx-auto relative px-4 md:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex justify-between items-center">
           <motion.div
             initial={{ opacity: 0 }}
@@ -87,45 +87,41 @@ export default function Header({ logoSrc, links }: HeaderProps) {
             </Link>
           </motion.div>
           
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex nav-container space-x-12 z-50">
+          {/* Desktop Navigation - ONLY shows on md and up */}
+          <nav className="hidden md:flex space-x-12">
             {links.map((link, index) => {
               const isActive = pathname === link.href;
               return (
-                <div
+                <Link 
                   key={link.href}
-                  className="relative z-50"
+                  href={link.href}
+                  className={getLinkStyles(isActive)}
                 >
-                  <Link 
-                    href={link.href}
-                    className={getLinkStyles(isActive)}
-                  >
-                    {link.label}
-                  </Link>
-                </div>
+                  {link.label}
+                </Link>
               );
             })}
           </nav>
+          
+          {/* Mobile Menu Button - ONLY shows on mobile (below md) */}
+          <button 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden z-20 p-2 bg-gold text-navy rounded-lg shadow-lg border-0"
+            aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+          >
+            {isMenuOpen ? (
+              <XMarkIcon className="h-6 w-6" />
+            ) : (
+              <Bars3Icon className="h-6 w-6" />
+            )}
+          </button>
         </div>
         
-        {/* Mobile Menu Button - Absolutely positioned to guarantee visibility */}
-        <button 
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden fixed top-4 right-4 z-[60] w-12 h-12 bg-orange-500 text-white rounded-full shadow-xl flex items-center justify-center hover:bg-orange-600 transition-all duration-300"
-          aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
-        >
-          {isMenuOpen ? (
-            <XMarkIcon className="h-6 w-6" />
-          ) : (
-            <Bars3Icon className="h-6 w-6" />
-          )}
-        </button>
-        
-        {/* Mobile Dropdown Menu */}
+        {/* Mobile Dropdown Menu - ONLY shows on mobile when menu is open */}
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div 
-              className="fixed top-[100px] left-0 right-0 md:hidden bg-white shadow-xl border-t border-gray-100 z-50"
+              className="md:hidden absolute top-full left-0 right-0 bg-white shadow-xl border-t border-gray-100 z-40"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}

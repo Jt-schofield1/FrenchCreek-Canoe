@@ -127,15 +127,18 @@ export default function HomePage() {
                   Experience the beauty and history of French Creek while exploring our unique trading post and local vendors.
                 </motion.p>
                 <motion.div
-                  className="mt-12 flex items-center justify-center"
+                  className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
                   variants={fadeIn}
                   transition={{ duration: 0.8, delay: 0.4 }}
                 >
                   <Link 
                     href="/site/contact" 
-                    className="btn mr-6 hover:scale-105 transition-all group relative"
+                    className="btn w-full sm:w-auto hover:scale-105 transition-all group relative px-6 sm:px-8"
                   >
-                    <span className="btn-text">Visit Us</span>
+                    <span className="btn-text">
+                      <span className="sm:hidden">Visit</span>
+                      <span className="hidden sm:inline">Visit Us</span>
+                    </span>
                     <motion.span 
                       className="absolute right-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all"
                       animate={{ x: [0, 3, 0] }}
@@ -144,9 +147,12 @@ export default function HomePage() {
                   </Link>
                   <Link 
                     href="/site/trading-post" 
-                    className="btn hover:scale-105 transition-all group relative"
+                    className="btn w-full sm:w-auto hover:scale-105 transition-all group relative px-6 sm:px-8"
                   >
-                    <span className="btn-text">Learn More</span>
+                    <span className="btn-text">
+                      <span className="sm:hidden">Learn</span>
+                      <span className="hidden sm:inline">Learn More</span>
+                    </span>
                     <motion.span 
                       className="absolute right-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all"
                       animate={{ x: [0, 3, 0] }}
