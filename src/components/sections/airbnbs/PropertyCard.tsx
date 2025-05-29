@@ -60,9 +60,9 @@ export default function PropertyCard({
                 e.preventDefault();
                 prevImage();
               }}
-              className="absolute left-3 top-1/2 -translate-y-1/2 p-2 bg-white/80 hover:bg-white rounded-full shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 z-10"
+              className="absolute left-3 top-1/2 -translate-y-1/2 p-2 bg-white/90 hover:bg-white rounded-full shadow-lg transition-all duration-300 sm:opacity-0 sm:group-hover:opacity-100 z-20 w-10 h-10 flex items-center justify-center"
             >
-              <ChevronLeft className="w-4 h-4 text-navy" />
+              <ChevronLeft className="w-5 h-5 text-navy" />
             </button>
             
             <button
@@ -71,9 +71,9 @@ export default function PropertyCard({
                 e.preventDefault();
                 nextImage();
               }}
-              className="absolute right-3 top-1/2 -translate-y-1/2 p-2 bg-white/80 hover:bg-white rounded-full shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 z-10"
+              className="absolute right-3 top-1/2 -translate-y-1/2 p-2 bg-white/90 hover:bg-white rounded-full shadow-lg transition-all duration-300 sm:opacity-0 sm:group-hover:opacity-100 z-20 w-10 h-10 flex items-center justify-center"
             >
-              <ChevronRight className="w-4 h-4 text-navy" />
+              <ChevronRight className="w-5 h-5 text-navy" />
             </button>
           </>
         )}

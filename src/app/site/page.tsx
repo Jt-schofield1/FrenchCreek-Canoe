@@ -208,10 +208,10 @@ export default function HomePage() {
                 </div>
                 <div className="flex justify-between items-end">
                   <div>
-                    <h3 className="text-xl font-medium mb-2 text-navy group-hover:text-navy transition-colors duration-300">Trading Post</h3>
-                    <p className="text-navy font-medium group-hover:text-navy transition-colors duration-300">Explore our trading post with unique items and local products.</p>
+                    <h3 className="text-xl font-medium mb-2 text-navy group-hover:text-white transition-colors duration-300">Trading Post</h3>
+                    <p className="text-navy font-medium group-hover:text-white transition-colors duration-300">Explore our trading post with unique items and local products.</p>
                   </div>
-                  <span className="text-creek group-hover:text-navy transform group-hover:translate-x-1 transition-all duration-300">
+                  <span className="text-creek group-hover:text-white transform group-hover:translate-x-1 transition-all duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>
@@ -233,10 +233,10 @@ export default function HomePage() {
                 </div>
                 <div className="flex justify-between items-end">
                   <div>
-                    <h3 className="text-xl font-medium mb-2 text-navy group-hover:text-navy transition-colors duration-300">Local Vendors</h3>
-                    <p className="text-navy font-medium group-hover:text-navy transition-colors duration-300">Meet our local artisans and discover their handcrafted goods.</p>
+                    <h3 className="text-xl font-medium mb-2 text-navy group-hover:text-white transition-colors duration-300">Local Vendors</h3>
+                    <p className="text-navy font-medium group-hover:text-white transition-colors duration-300">Meet our local artisans and discover their handcrafted goods.</p>
                   </div>
-                  <span className="text-creek group-hover:text-navy transform group-hover:translate-x-1 transition-all duration-300">
+                  <span className="text-creek group-hover:text-white transform group-hover:translate-x-1 transition-all duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>

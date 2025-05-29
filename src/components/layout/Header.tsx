@@ -64,43 +64,45 @@ export default function Header({ logoSrc, links }: HeaderProps) {
           : 'py-6 bg-white shadow-sm'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="flex justify-between items-center w-full">
-          {/* Logo */}
-          <Link href="/site" className="z-10 focus:outline-none block border-0" style={{ border: 'none', outline: 'none' }}>
-            <div className="relative">
-              <Image 
-                src={logoSrc} 
-                alt="French Creek Trading Post" 
-                width={180} 
-                height={90} 
-                priority
-                className={`h-auto w-[120px] sm:w-[150px] md:w-[180px] transition-all duration-300 border-0 outline-none ${scrolled ? 'scale-90' : 'scale-100'}`}
-                style={{ border: 'none', outline: 'none', boxShadow: 'none' }}
-              />
-            </div>
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center">
+          {/* Logo - Visible on all devices */}
+          <Link href="/site" className="relative z-10">
+            <Image 
+              src={logoSrc} 
+              alt="French Creek Trading Post" 
+              width={180} 
+              height={90} 
+              priority
+              className={`h-auto w-[120px] sm:w-[150px] md:w-[180px] transition-all duration-300 ${
+                scrolled ? 'scale-90' : 'scale-100'
+              }`}
+            />
           </Link>
           
-          {/* Desktop Navigation - ONLY shows on md and up */}
-          <nav className="hidden md:flex space-x-12">
-            {links.map((link, index) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link 
-                  key={link.href}
-                  href={link.href}
-                  className={getLinkStyles(isActive)}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
+          {/* Desktop Navigation - ONLY visible on medium screens and up */}
+          <nav className="hidden md:block">
+            <ul className="flex items-center space-x-12">
+              {links.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <li key={link.href}>
+                    <Link 
+                      href={link.href}
+                      className={getLinkStyles(isActive)}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
           </nav>
           
-          {/* Mobile Menu Button - ONLY shows on mobile (below md) */}
+          {/* Mobile Menu Button - ONLY visible on small screens */}
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden z-20 p-2 bg-gold text-navy rounded-lg shadow-lg border-0"
+            className="block md:hidden z-20 p-2 rounded-lg bg-gold text-navy"
             aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
           >
             {isMenuOpen ? (
@@ -110,55 +112,56 @@ export default function Header({ logoSrc, links }: HeaderProps) {
             )}
           </button>
         </div>
-        
-        {/* Mobile Dropdown Menu - ONLY shows on mobile when menu is open */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div 
-              className="md:hidden absolute top-full left-0 right-0 bg-white shadow-xl border-t border-gray-100 z-40"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="py-4 px-4">
-                <nav className="flex flex-col space-y-1">
-                  {links.map((link, i) => {
-                    const isActive = pathname === link.href;
-                    return (
-                      <motion.div
-                        key={link.href}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.3, delay: i * 0.1 }}
-                      >
-                        <Link 
-                          href={link.href}
-                          className={`block px-4 py-3 rounded-lg text-base font-medium tracking-wide transition-all duration-200 ${
-                            isActive
-                              ? 'bg-gold text-navy shadow-sm'
-                              : 'text-navy hover:bg-cream-50 hover:text-gold'
-                          }`}
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          {link.label}
-                        </Link>
-                      </motion.div>
-                    );
-                  })}
-                </nav>
-              </div>
-              {/* Bottom accent bar */}
-              <motion.div 
-                className="h-1 bg-gradient-to-r from-gold via-orange to-creek"
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              />
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
+      
+      {/* Mobile Menu - Fullscreen overlay when open */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div 
+            className="fixed inset-0 bg-white pt-24 z-10 md:hidden"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="container mx-auto px-4">
+              <ul className="flex flex-col space-y-4">
+                {links.map((link, i) => {
+                  const isActive = pathname === link.href;
+                  return (
+                    <motion.li
+                      key={link.href}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.2, delay: i * 0.05 }}
+                    >
+                      <Link 
+                        href={link.href}
+                        className={`block py-3 px-4 text-lg font-medium rounded-lg ${
+                          isActive 
+                            ? 'bg-gold text-navy' 
+                            : 'text-navy hover:bg-cream-50'
+                        }`}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {link.label}
+                      </Link>
+                    </motion.li>
+                  );
+                })}
+              </ul>
+            </div>
+            
+            {/* Bottom gradient accent */}
+            <motion.div 
+              className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-gold via-orange to-creek"
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.3, delay: 0.2 }}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 } 

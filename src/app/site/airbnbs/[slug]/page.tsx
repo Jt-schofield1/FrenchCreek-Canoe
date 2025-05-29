@@ -29,7 +29,7 @@ const properties: Record<string, PropertyData> = {
   'french-creek-retreat': {
     slug: 'french-creek-retreat',
     title: 'French Creek Retreat',
-    price: 195,
+    price: 149,
     images: ['/images/airbnbs/cottage1.png'],
     airbnbUrl: 'https://www.airbnb.com/rooms/1006394972568557545?search_mode=regular_search&adults=1&check_in=2025-06-01&check_out=2025-06-06&children=0&infants=0&pets=0&source_impression_id=p3_1747876300_P3ArBMsuE5Qr6Abd&previous_page_section_name=1000&federated_search_id=29bd7ada-85b3-4938-8c21-b85fbdff5077',
     description: {
@@ -56,7 +56,7 @@ const properties: Record<string, PropertyData> = {
   'french-creek-retreat-ii': {
     slug: 'french-creek-retreat-ii',
     title: 'French Creek Retreat II',
-    price: 230,
+    price: 149,
     images: ['/images/airbnbs/cottage2.png'],
     airbnbUrl: 'https://www.airbnb.com/rooms/1010362884074576037?source_impression_id=p3_1747877672_P36ExRQGOBrv9y3H',
     description: {
