@@ -69,7 +69,7 @@ export default function Header({ logoSrc, links }: HeaderProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="relative"
+          className="relative flex-shrink-0"
         >
           <Link href="/site" className="z-10 focus:outline-none block border-0" style={{ border: 'none', outline: 'none' }}>
             <div className="relative">
@@ -79,7 +79,7 @@ export default function Header({ logoSrc, links }: HeaderProps) {
                 width={180} 
                 height={90} 
                 priority
-                className={`h-auto min-w-[100px] max-w-[180px] w-[180px] transition-all duration-300 border-0 outline-none ${scrolled ? 'scale-90' : 'scale-100'}`}
+                className={`h-auto w-[120px] sm:w-[150px] md:w-[180px] transition-all duration-300 border-0 outline-none ${scrolled ? 'scale-90' : 'scale-100'}`}
                 style={{ border: 'none', outline: 'none', boxShadow: 'none' }}
               />
             </div>
@@ -109,7 +109,7 @@ export default function Header({ logoSrc, links }: HeaderProps) {
         {/* Mobile Menu Button */}
         <motion.button 
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden z-20 focus:outline-none p-3 bg-gold text-navy rounded-lg shadow-lg border-0"
+          className="md:hidden z-20 focus:outline-none p-2 sm:p-3 bg-gold text-navy rounded-lg shadow-lg border-0 flex-shrink-0"
           aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

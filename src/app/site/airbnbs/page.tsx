@@ -180,22 +180,24 @@ export default function AirBnBsPage() {
               Both properties book quickly, especially during peak seasons. 
               Reserve your perfect French Creek retreat today.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
               <a 
                 href={properties[0].airbnbUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3 bg-gold text-black font-semibold rounded-lg hover:bg-black hover:text-white hover:scale-105 transition-all duration-300 shadow-lg"
+                className="px-4 sm:px-6 md:px-8 py-3 bg-gold text-black font-semibold rounded-lg hover:bg-black hover:text-white hover:scale-105 transition-all duration-300 shadow-lg text-sm sm:text-base"
               >
-                Book French Creek Retreat
+                <span className="sm:hidden">Book Retreat I</span>
+                <span className="hidden sm:inline">Book French Creek Retreat</span>
               </a>
               <a 
                 href={properties[1].airbnbUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3 bg-gold text-black font-semibold rounded-lg hover:bg-black hover:text-white hover:scale-105 transition-all duration-300 shadow-lg"
+                className="px-4 sm:px-6 md:px-8 py-3 bg-gold text-black font-semibold rounded-lg hover:bg-black hover:text-white hover:scale-105 transition-all duration-300 shadow-lg text-sm sm:text-base"
               >
-                Book French Creek Retreat II
+                <span className="sm:hidden">Book Retreat II</span>
+                <span className="hidden sm:inline">Book French Creek Retreat II</span>
               </a>
             </div>
           </motion.div>

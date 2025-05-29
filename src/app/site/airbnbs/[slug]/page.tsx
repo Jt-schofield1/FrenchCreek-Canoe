@@ -119,17 +119,17 @@ export default function PropertyDetailPage({ params }: { params: Promise<{ slug:
                 </div>
                 
                 {/* Property specs in a clean grid */}
-                <div className="flex items-center justify-center gap-8 mb-8">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-8">
                   <div className="flex items-center text-gray-700">
                     <Users className="w-5 h-5 mr-2 text-creek" />
                     <span className="font-medium">{property.specs.guests} guests</span>
                   </div>
-                  <div className="w-px h-6 bg-gray-300"></div>
+                  <div className="hidden sm:block w-px h-6 bg-gray-300"></div>
                   <div className="flex items-center text-gray-700">
                     <Bed className="w-5 h-5 mr-2 text-creek" />
                     <span className="font-medium">{property.specs.bedrooms} bedroom</span>
                   </div>
-                  <div className="w-px h-6 bg-gray-300"></div>
+                  <div className="hidden sm:block w-px h-6 bg-gray-300"></div>
                   <div className="flex items-center text-gray-700">
                     <Bath className="w-5 h-5 mr-2 text-creek" />
                     <span className="font-medium">{property.specs.bathrooms} bathroom</span>
