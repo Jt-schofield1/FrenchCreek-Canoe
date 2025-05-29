@@ -109,7 +109,7 @@ export default function Header({ logoSrc, links }: HeaderProps) {
         {/* Mobile Menu Button */}
         <motion.button 
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden z-20 focus:outline-none p-3 border-2 border-navy rounded-lg bg-white shadow-lg text-navy"
+          className="md:hidden z-20 focus:outline-none p-3 bg-gold text-navy rounded-lg shadow-lg border-0"
           aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
