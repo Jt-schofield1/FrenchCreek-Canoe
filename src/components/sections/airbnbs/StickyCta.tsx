@@ -16,7 +16,7 @@ export default function StickyCta() {
     <AnimatePresence>
       {show && (
         <motion.div 
-          className="fixed bottom-4 inset-x-0 flex justify-center z-40 px-4"
+          className="fixed bottom-4 inset-x-0 hidden md:flex justify-center z-40 px-4"
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 100 }}

@@ -201,15 +201,15 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <Link href="/site/trading-post" className="group block transform transition-all duration-500 hover:-translate-y-2">
+              <Link href="/site/trading-post" className="group trading-post-card block transform transition-all duration-500 hover:-translate-y-2">
                 <div className="aspect-[4/3] relative overflow-hidden mb-6 img-frame">
                   <img src="/images/creek-history/settlers-bridge.jpg" alt="Historical Artifacts" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/80 to-navy/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <div className="flex justify-between items-end group-hover:[&>div>h3]:!text-white group-hover:[&>div>p]:!text-white">
+                <div className="flex justify-between items-end">
                   <div>
-                    <h3 className="text-xl font-medium mb-2 text-navy group-hover:text-white transition-colors duration-300">Trading Post</h3>
-                    <p className="text-navy font-medium group-hover:text-white transition-colors duration-300">Explore our trading post with unique items and local products.</p>
+                    <h3 className="text-xl font-medium mb-2 text-navy transition-colors duration-300">Trading Post</h3>
+                    <p className="text-navy font-medium transition-colors duration-300 !text-navy !opacity-100 !visible">Explore our trading post with unique items and local products.</p>
                   </div>
                   <span className="text-creek group-hover:text-white transform group-hover:translate-x-1 transition-all duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -226,15 +226,15 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <Link href="/site/vendors" className="group block transform transition-all duration-500 hover:-translate-y-2">
+              <Link href="/site/vendors" className="group local-vendors-card block transform transition-all duration-500 hover:-translate-y-2">
                 <div className="aspect-[4/3] relative overflow-hidden mb-6 img-frame">
                   <img src="/images/vendors/french-creek-candles.jpg" alt="French Creek Candles" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/80 to-navy/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <div className="flex justify-between items-end group-hover:[&>div>h3]:!text-white group-hover:[&>div>p]:!text-white">
+                <div className="flex justify-between items-end">
                   <div>
-                    <h3 className="text-xl font-medium mb-2 text-navy group-hover:text-white transition-colors duration-300">Local Vendors</h3>
-                    <p className="text-navy font-medium group-hover:text-white transition-colors duration-300">Meet our local artisans and discover their handcrafted goods.</p>
+                    <h3 className="text-xl font-medium mb-2 text-navy transition-colors duration-300">Local Vendors</h3>
+                    <p className="text-navy font-medium transition-colors duration-300 !text-navy">Meet our local artisans and discover their handcrafted goods.</p>
                   </div>
                   <span className="text-creek group-hover:text-white transform group-hover:translate-x-1 transition-all duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">

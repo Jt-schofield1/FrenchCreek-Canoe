@@ -69,7 +69,7 @@ export default function Header({ logoSrc, links }: HeaderProps) {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <Link href="/site" className="relative z-[100]">
+            <Link href="/site" className="relative z-[120] logo-link">
               <Image 
                 src={logoSrc} 
                 alt="French Creek Trading Post" 
@@ -86,7 +86,7 @@ export default function Header({ logoSrc, links }: HeaderProps) {
             {/* Mobile Menu Button */}
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="z-[100] p-2 rounded-lg bg-gold text-navy w-14 h-14 flex items-center justify-center shadow-md"
+              className="z-[120] p-2 rounded-lg bg-gold text-navy w-14 h-14 flex items-center justify-center shadow-md"
               aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
             >
               {isMenuOpen ? (
@@ -102,47 +102,72 @@ export default function Header({ logoSrc, links }: HeaderProps) {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div 
-              className="fixed inset-0 bg-white pt-24 z-[90]"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.2 }}
+              className="fixed z-[110] bg-white mobile-menu-overlay"
+              style={{ 
+                backgroundColor: '#ffffff !important',
+                background: '#ffffff !important',
+                opacity: 1,
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                width: '100vw',
+                height: '100vh',
+                minHeight: '100vh',
+                maxHeight: '100vh'
+              }}
+              initial={{ y: '-100%' }}
+              animate={{ y: 0 }}
+              exit={{ y: '-100%' }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
             >
-              <div className="container mx-auto px-4">
-                <ul className="flex flex-col space-y-4">
-                  {links.map((link, i) => {
-                    const isActive = pathname === link.href;
-                    return (
-                      <motion.li
-                        key={link.href}
-                        initial={{ opacity: 0, x: -10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.2, delay: i * 0.05 }}
-                      >
-                        <Link 
-                          href={link.href}
-                          className={`block py-3 px-4 text-lg font-medium rounded-lg ${
-                            isActive 
-                              ? 'bg-gold text-navy' 
-                              : 'text-navy hover:bg-cream-50'
-                          }`}
-                          onClick={() => setIsMenuOpen(false)}
+              <div 
+                className="pt-24 h-full bg-white" 
+                style={{ 
+                  backgroundColor: '#ffffff !important',
+                  background: '#ffffff !important',
+                  height: '100vh',
+                  minHeight: '100vh',
+                  width: '100%'
+                }}
+              >
+                <div className="container mx-auto px-4">
+                  <ul className="flex flex-col space-y-4">
+                    {links.map((link, i) => {
+                      const isActive = pathname === link.href;
+                      return (
+                        <motion.li
+                          key={link.href}
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.2, delay: i * 0.05 }}
                         >
-                          {link.label}
-                        </Link>
-                      </motion.li>
-                    );
-                  })}
-                </ul>
+                          <Link 
+                            href={link.href}
+                            className={`block py-3 px-4 text-lg font-medium rounded-lg ${
+                              isActive 
+                                ? 'bg-gold text-navy' 
+                                : 'text-navy hover:bg-cream-50'
+                            }`}
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            {link.label}
+                          </Link>
+                        </motion.li>
+                      );
+                    })}
+                  </ul>
+                </div>
+                
+                {/* Bottom gradient accent */}
+                <motion.div 
+                  className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-gold via-orange to-creek"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 0.3, delay: 0.2 }}
+                />
               </div>
-              
-              {/* Bottom gradient accent */}
-              <motion.div 
-                className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-gold via-orange to-creek"
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 0.3, delay: 0.2 }}
-              />
             </motion.div>
           )}
         </AnimatePresence>
@@ -159,7 +184,7 @@ export default function Header({ logoSrc, links }: HeaderProps) {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <Link href="/site" className="relative z-[100]">
+            <Link href="/site" className="relative z-[100] logo-link">
               <Image 
                 src={logoSrc} 
                 alt="French Creek Trading Post" 

@@ -35,12 +35,11 @@ export default function VendorCard({ vendor, onOpen, index }: VendorCardProps) {
           alt={vendor.name} 
           className={`w-full object-cover ${
             vendor.name === 'N-SpireDesign' 
-              ? 'h-[150%] object-center' 
+              ? 'h-[120%] object-[center_top] md:h-[150%] md:object-[center_-100px]' 
               : 'h-full object-[center_85%]'
           }`}
           style={vendor.name === 'N-SpireDesign' ? { 
-            objectPosition: 'center -100px',
-            marginTop: '-50px'
+            transform: 'translateY(-10px)'
           } : {}}
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.3 }}

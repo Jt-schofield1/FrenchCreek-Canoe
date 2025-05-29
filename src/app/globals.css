@@ -92,7 +92,7 @@ p {
   color: var(--navy);
   transition: all 0.3s ease-in-out;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 8px;
   font-weight: 500;
   position: relative;
   z-index: 1;
@@ -102,19 +102,19 @@ p {
 
 /* Black border override */
 .btn.border-black {
-  border-color: black !important;
+  border: none !important;
 }
 
 /* Custom black border class */
 .black-border {
-  border: 1px solid black !important;
+  border: none !important;
 }
 
 /* Special Explore button styling */
 .btn.black-border:hover {
   background-color: black;
   color: white !important;
-  border-color: black !important;
+  border: none !important;
 }
 
 .btn:hover {
@@ -165,6 +165,7 @@ p {
   box-shadow: 0 10px 25px rgba(6, 41, 73, 0.15);
 }
 
+/* Default img-frame styling - restored to original black borders */
 .img-frame::after {
   content: '';
   position: absolute;
@@ -172,7 +173,7 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  border: 2px solid var(--gold);
+  border: 2px solid #000000;
   border-radius: 8px;
   opacity: 0;
   transition: all 0.3s ease;
@@ -180,6 +181,7 @@ p {
 }
 
 .img-frame:hover::after {
+  border: 2px solid #000000;
   opacity: 1;
   top: -8px;
   left: -8px;
@@ -252,10 +254,20 @@ a.text-navy-muted:hover {
 }
 
 /* Group hover for section cards - more specific to avoid affecting event cards */
-.group:hover h3:not(.text-navy),
-.group:hover p:not(.text-gray-600) {
+.group:hover h3:not(.text-navy):not(.group-hover\:text-white),
+.group:hover p:not(.text-gray-600):not(.group-hover\:text-white) {
   color: white;
   transition: color 0.3s ease;
+}
+
+/* Specific overrides for Trading Post and Local Vendors cards */
+.trading-post-card:hover h3,
+.trading-post-card:hover p,
+.local-vendors-card:hover h3,
+.local-vendors-card:hover p {
+  color: var(--navy) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 /* Navigation styles */
@@ -388,4 +400,65 @@ section li::selection,
 section a::selection {
   background-color: var(--cream-200);
   color: var(--navy) !important; /* Match navy text in content sections */
+}
+
+/* Force mobile menu to have white background */
+.mobile-menu-overlay {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* FINAL MOBILE MENU FIX - Ultra specific */
+@media (max-width: 767px) {
+  /* Target the exact mobile menu structure */
+  header + div[class*="fixed"],
+  div[data-framer-name*="menu"],
+  .mobile-menu-overlay,
+  div[style*="position: fixed"][style*="inset: 0px"][style*="z-index: 110"] {
+    background: white !important;
+    background-color: white !important;
+    background-image: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    opacity: 1 !important;
+  }
+  
+  /* Force white background on all potential mobile menu containers */
+  div[class*="z-[110]"],
+  div[style*="z-index: 110"] {
+    background: white !important;
+    background-color: white !important;
+  }
+  
+  /* Additional mobile menu inner containers */
+  .mobile-menu-overlay > div,
+  div[class*="mobile-menu"] div {
+    background: white !important;
+    background-color: white !important;
+  }
+}
+
+/* Logo specific styling - ensure no button appearance */
+.logo-link, 
+a[href] img,
+Link img,
+a[href]:has(img) {
+  border: none !important;
+  background: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+  display: inline-block !important;
+}
+
+.logo-link:hover,
+a[href] img:hover,
+Link img:hover,
+a[href]:has(img):hover {
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  transform: none !important;
 }

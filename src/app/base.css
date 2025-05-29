@@ -134,12 +134,14 @@ p {
 .btn, a[href]:not(nav a) {
   display: inline-block;
   padding: 0.75rem 2rem;
-  border: 1px solid black;
+  border: none;
   transition: all 0.3s ease-in-out;
   text-decoration: none;
   color: inherit;
   letter-spacing: 0.03em;
   word-spacing: 0.1em;
+  border-radius: 8px;
+  background-color: var(--gold, #F1A417);
 }
 
 .btn:hover, a[href]:not(nav a):hover {
@@ -299,10 +301,12 @@ footer .font-medium + ul li a:hover {
 footer .btn {
   display: inline-block;
   padding: 0.75rem 2rem !important;
-  border: 1px solid black !important;
+  border: none !important;
   transition: all 0.3s ease-in-out;
   text-decoration: none;
   color: inherit;
+  border-radius: 8px;
+  background-color: var(--gold, #F1A417);
 }
 
 footer .btn:hover {

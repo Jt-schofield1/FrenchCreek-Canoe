@@ -58,7 +58,7 @@ export default function HeroStay() {
         
         <motion.a 
           href="#featured" 
-          className="mt-8 inline-block px-10 py-4 bg-gold text-black font-bold rounded-lg shadow-2xl hover:scale-105 transition-all duration-300 text-lg border-2 border-gold hover:bg-black hover:text-white"
+          className="mt-8 inline-block px-10 py-4 bg-gold text-black font-bold rounded-lg shadow-2xl hover:scale-105 transition-all duration-300 text-lg border-none hover:bg-black hover:text-white"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.0 }}
