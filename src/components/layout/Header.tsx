@@ -64,91 +64,72 @@ export default function Header({ logoSrc, links }: HeaderProps) {
           : 'py-6 bg-white shadow-sm'
       }`}
     >
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-8">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="relative flex-shrink-0"
-        >
-          <Link href="/site" className="z-10 focus:outline-none block border-0" style={{ border: 'none', outline: 'none' }}>
-            <div className="relative">
-              <Image 
-                src={logoSrc} 
-                alt="French Creek Trading Post" 
-                width={180} 
-                height={90} 
-                priority
-                className={`h-auto w-[120px] sm:w-[150px] md:w-[180px] transition-all duration-300 border-0 outline-none ${scrolled ? 'scale-90' : 'scale-100'}`}
-                style={{ border: 'none', outline: 'none', boxShadow: 'none' }}
-              />
-            </div>
-          </Link>
-        </motion.div>
-        
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex nav-container space-x-12 z-50">
-          {links.map((link, index) => {
-            const isActive = pathname === link.href;
-            return (
-              <div
-                key={link.href}
-                className="relative z-50"
-              >
-                <Link 
-                  href={link.href}
-                  className={getLinkStyles(isActive)}
-                >
-                  {link.label}
-                </Link>
+      <div className="max-w-7xl mx-auto relative px-4 md:px-8">
+        <div className="flex justify-between items-center">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="relative"
+          >
+            <Link href="/site" className="z-10 focus:outline-none block border-0" style={{ border: 'none', outline: 'none' }}>
+              <div className="relative">
+                <Image 
+                  src={logoSrc} 
+                  alt="French Creek Trading Post" 
+                  width={180} 
+                  height={90} 
+                  priority
+                  className={`h-auto w-[120px] sm:w-[150px] md:w-[180px] transition-all duration-300 border-0 outline-none ${scrolled ? 'scale-90' : 'scale-100'}`}
+                  style={{ border: 'none', outline: 'none', boxShadow: 'none' }}
+                />
               </div>
-            );
-          })}
-        </nav>
+            </Link>
+          </motion.div>
+          
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex nav-container space-x-12 z-50">
+            {links.map((link, index) => {
+              const isActive = pathname === link.href;
+              return (
+                <div
+                  key={link.href}
+                  className="relative z-50"
+                >
+                  <Link 
+                    href={link.href}
+                    className={getLinkStyles(isActive)}
+                  >
+                    {link.label}
+                  </Link>
+                </div>
+              );
+            })}
+          </nav>
+        </div>
         
-        {/* Mobile Menu Button */}
-        <motion.button 
+        {/* Mobile Menu Button - Absolutely positioned to guarantee visibility */}
+        <button 
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden z-20 focus:outline-none p-2 sm:p-3 bg-gold text-navy rounded-lg shadow-lg border-0 flex-shrink-0"
+          className="md:hidden fixed top-4 right-4 z-[60] w-12 h-12 bg-orange-500 text-white rounded-full shadow-xl flex items-center justify-center hover:bg-orange-600 transition-all duration-300"
           aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.3 }}
         >
-          <AnimatePresence mode="wait">
-            {isMenuOpen ? (
-              <motion.div
-                key="close"
-                initial={{ rotate: -90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: 90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <XMarkIcon className="h-6 w-6" />
-              </motion.div>
-            ) : (
-              <motion.div
-                key="open"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Bars3Icon className="h-6 w-6" />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.button>
+          {isMenuOpen ? (
+            <XMarkIcon className="h-6 w-6" />
+          ) : (
+            <Bars3Icon className="h-6 w-6" />
+          )}
+        </button>
         
         {/* Mobile Dropdown Menu */}
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div 
-              className="absolute top-full left-0 right-0 md:hidden bg-white shadow-xl border-t border-gray-100 z-40"
-              initial={{ opacity: 0, y: -20, height: 0 }}
-              animate={{ opacity: 1, y: 0, height: "auto" }}
-              exit={{ opacity: 0, y: -20, height: 0 }}
-              transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+              className="fixed top-[100px] left-0 right-0 md:hidden bg-white shadow-xl border-t border-gray-100 z-50"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
             >
               <div className="py-4 px-4">
                 <nav className="flex flex-col space-y-1">
