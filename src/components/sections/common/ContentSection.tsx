@@ -114,7 +114,7 @@ export default function ContentSection({
               {ctaLink && ctaText && (
                 <Link 
                   href={ctaLink}
-                  className="btn border-2 border-gold transform hover:scale-105 transition-all inline-block mx-auto w-auto px-8"
+                  className="btn transform hover:scale-105 transition-all inline-block mx-auto w-auto px-8"
                   style={{ maxWidth: "200px" }}
                 >
                   <span className="btn-text">{ctaText}</span>

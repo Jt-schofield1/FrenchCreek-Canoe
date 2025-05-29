@@ -87,7 +87,7 @@ p {
   justify-content: center;
   height: 2.75rem;
   padding: 0 2rem;
-  border: 2px solid var(--gold);
+  border: none;
   background-color: var(--gold);
   color: var(--navy);
   transition: all 0.3s ease-in-out;
@@ -120,14 +120,14 @@ p {
 .btn:hover {
   background-color: #000;
   color: white !important;
-  border-color: #000;
+  border: none;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Navy background buttons */
 .bg-navy .btn {
-  border: 2px solid var(--gold);
+  border: none;
   background-color: var(--gold);
   color: var(--navy);
 }
@@ -135,19 +135,19 @@ p {
 .bg-navy .btn:hover {
   background-color: #000;
   color: white !important;
-  border-color: #000;
+  border: none;
 }
 
 /* Gold buttons - keeping for backward compatibility */
 .btn.bg-gold {
   background-color: var(--gold);
-  border-color: var(--gold);
+  border: none;
   color: var(--navy);
 }
 
 .btn.bg-gold:hover {
   background-color: #000;
-  border-color: #000;
+  border: none;
   color: white !important;
 }
 
@@ -251,9 +251,9 @@ a.text-navy-muted:hover {
   color: var(--creek) !important;
 }
 
-/* Group hover for section cards */
-.group:hover h3,
-.group:hover p {
+/* Group hover for section cards - more specific to avoid affecting event cards */
+.group:hover h3:not(.text-navy),
+.group:hover p:not(.text-gray-600) {
   color: white;
   transition: color 0.3s ease;
 }

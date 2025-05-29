@@ -64,7 +64,7 @@ export default function GoogleMap({
     try {
       // Try to create a dynamic map
       const geocoder = new google.maps.Geocoder();
-      geocoder.geocode({ address }, (results, status) => {
+      geocoder.geocode({ address }, (results: any, status: any) => {
         if (status === 'OK' && results && results[0] && mapRef.current) {
           const map = new google.maps.Map(mapRef.current, {
             center: results[0].geometry.location,
@@ -127,6 +127,21 @@ export default function GoogleMap({
 declare global {
   interface Window {
     initGoogleMap: (() => void) | undefined;
-    google: any;
+    google: {
+      maps: {
+        Map: any;
+        Geocoder: any;
+        Marker: any;
+      };
+    };
   }
-} 
+}
+
+// Add type for google global
+declare const google: {
+  maps: {
+    Map: any;
+    Geocoder: any;
+    Marker: any;
+  };
+}; 

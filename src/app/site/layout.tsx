@@ -27,6 +27,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
             { label: 'Trading Post', href: '/site/trading-post' },
             { label: 'Vendors', href: '/site/vendors' },
             { label: 'AirBnbs', href: '/site/airbnbs' },
+            { label: 'Events', href: '/site/events' },
             { label: 'Contact', href: '/site/contact' },
           ]}
         />
@@ -52,6 +53,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
                 { label: 'Trading Post', href: '/site/trading-post' },
                 { label: 'Vendors', href: '/site/vendors' },
                 { label: 'AirBnbs', href: '/site/airbnbs' },
+                { label: 'Events', href: '/site/events' },
                 { label: 'Contact', href: '/site/contact' },
               ]
             }

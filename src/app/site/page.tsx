@@ -278,8 +278,7 @@ export default function HomePage() {
               
               <Link 
                 href="/site/trading-post"
-                className="btn black-border bg-gold text-navy font-medium transform hover:scale-105 transition-all border border-black"
-                style={{ border: '1px solid black' }}
+                className="btn bg-gold text-navy font-medium transform hover:scale-105 transition-all"
               >
                 <span className="btn-text">Explore the Post</span>
               </Link>

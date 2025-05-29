@@ -94,15 +94,7 @@ export default function Footer({ logoSrc, columns, copyright, credit }: FooterPr
             <h3 className="font-medium mb-6 tracking-wide text-sm text-navy">Connect</h3>
             <ul className="space-y-4">
               <li>
-                <a href="#" className="text-navy-muted hover:text-creek transition-colors duration-200 text-sm flex items-center group">
-                  <span className="hover-underline">Instagram</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M7 17l9.2-9.2M17 17V7H7" />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-navy-muted hover:text-creek transition-colors duration-200 text-sm flex items-center group">
+                <a href="https://www.facebook.com/people/French-Creek-Canoe/61560709360779/" target="_blank" rel="noopener noreferrer" className="text-navy-muted hover:text-creek transition-colors duration-200 text-sm flex items-center group">
                   <span className="hover-underline">Facebook</span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M7 17l9.2-9.2M17 17V7H7" />
@@ -110,8 +102,8 @@ export default function Footer({ logoSrc, columns, copyright, credit }: FooterPr
                 </a>
               </li>
               <li>
-                <a href="mailto:info@frenchcreekcanoe.com" className="text-navy-muted hover:text-creek transition-colors duration-200 text-sm flex items-center group">
-                  <span className="hover-underline">info@frenchcreekcanoe.com</span>
+                <a href="mailto:frenchcreekcanoe@gmail.com" className="text-navy-muted hover:text-creek transition-colors duration-200 text-sm flex items-center group">
+                  <span className="hover-underline">frenchcreekcanoe@gmail.com</span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M7 17l9.2-9.2M17 17V7H7" />
                   </svg>

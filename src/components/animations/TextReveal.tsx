@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion';
 
 interface TextRevealProps {
   children: ReactNode;
-  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'span';
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'span' | 'div';
   delay?: number;
   duration?: number;
   className?: string;
@@ -91,18 +91,6 @@ export default function TextReveal({
   const processChildren = (child: ReactNode): ReactNode => {
     if (typeof child === 'string') {
       return renderWords(child);
-    }
-    
-    if (typeof child === 'object' && child !== null && 'props' in child) {
-      return {
-        ...child,
-        props: {
-          ...child.props,
-          children: Array.isArray(child.props.children)
-            ? child.props.children.map(processChildren)
-            : processChildren(child.props.children)
-        }
-      };
     }
     
     return child;

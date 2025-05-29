@@ -21,10 +21,10 @@ export default function TradingPostPage() {
       subtitle: 'Clothing and accessories'
     },
     {
-      src: '/images/trading-post/historical-artifacts.jpeg',
+      src: '/images/trading-post/creekpic.png',
       alt: 'Historical Items',
-      title: 'Historical Artifacts',
-      subtitle: 'Pieces of local history'
+      title: 'Historical French Creek',
+      subtitle: 'French Creek in Waterford, PA'
     },
     {
       src: '/images/trading-post/seasonal-offerings.jpeg',
@@ -46,7 +46,21 @@ export default function TradingPostPage() {
           </p>
         </div>
         
-                <div className="container mx-auto px-6 pt-26 pb-8 text-center">          <motion.h1            initial={{ scale: 0.8, opacity: 0, rotateX: 45 }}            animate={{ scale: 1, opacity: 1, rotateX: 0 }}            transition={{              type: 'spring',              stiffness: 220,              damping: 20,              delay: 0.15,            }}            className="mt-8 font-display font-extrabold text-navy drop-shadow"            style={{ fontSize: 'clamp(3rem, 10vw, 7rem)' }}          >            Trading Post          </motion.h1>                  </div>
+        <div className="container mx-auto px-6 pt-26 pb-8 text-center">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.8,
+              ease: [0.25, 0.1, 0.25, 1],
+              delay: 0.2
+            }}
+            className="mt-8 font-display font-extrabold text-navy"
+            style={{ fontSize: 'clamp(3rem, 10vw, 7rem)' }}
+          >
+            Trading Post
+          </motion.h1>
+        </div>
       </div>
 
       {/* B — USP Icon Tiles */}
@@ -341,7 +355,7 @@ export default function TradingPostPage() {
         <div className="text-center mt-12">
           <Link 
             href="/site/contact"
-            className="btn border-2 border-gold transform hover:scale-105 transition-all inline-block mx-auto w-auto px-8"
+            className="btn transform hover:scale-105 transition-all inline-block mx-auto w-auto px-8"
             style={{ maxWidth: "200px" }}
           >
             <span className="btn-text">Contact Us</span>
