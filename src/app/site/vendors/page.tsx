@@ -32,7 +32,7 @@ const CABIN_AREAS: CabinArea[] = [
     description: 'Traditional crafts and artisanal goods from local makers',
     color: '#8B4513',
     bgGradient: 'from-amber-50 to-orange-100',
-    modelPath: '/images/3-d/TradingPost.png',
+    modelPath: '/images/3-d/trading-post.png',
     vendors: [
       {
         name: "French Creek Candles",
@@ -72,7 +72,7 @@ const CABIN_AREAS: CabinArea[] = [
     description: 'Premium wines and craft spirits for refined tastes',
     color: '#722F37',
     bgGradient: 'from-purple-50 to-red-100',
-    modelPath: '/images/3-d/Spirit Cabin.png',
+    modelPath: '/images/3-d/spirit-cabin.png',
     vendors: [
       {
         name: "Cellar 54",
@@ -94,7 +94,7 @@ const CABIN_AREAS: CabinArea[] = [
     description: 'Creative arts and educational experiences',
     color: '#2E4A62',
     bgGradient: 'from-blue-50 to-indigo-100',
-    modelPath: '/images/3-d/Studio Cabin.png',
+    modelPath: '/images/3-d/studio-cabin.png',
     vendors: [
       {
         name: "N-SpireDesign",
