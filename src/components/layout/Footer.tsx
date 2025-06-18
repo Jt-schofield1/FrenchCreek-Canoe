@@ -102,8 +102,8 @@ export default function Footer({ logoSrc, columns, copyright, credit }: FooterPr
                 </a>
               </li>
               <li>
-                <a href="mailto:frenchcreekcanoe@gmail.com" className="text-navy-muted hover:text-creek transition-colors duration-200 text-sm flex items-center group">
-                  <span className="hover-underline">frenchcreekcanoe@gmail.com</span>
+                <a href="mailto:frenchcreekcanoetradingpost@gmail.com" className="text-navy-muted hover:text-creek transition-colors duration-200 text-sm flex items-center group">
+                  <span className="hover-underline">frenchcreekcanoetradingpost@gmail.com</span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M7 17l9.2-9.2M17 17V7H7" />
                   </svg>

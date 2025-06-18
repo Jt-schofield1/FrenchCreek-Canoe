@@ -135,8 +135,8 @@ export default function ContactPage() {
                   <Mail className="w-6 h-6 text-gold mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-semibold text-navy mb-1">Email</p>
-                    <a href="mailto:frenchcreekcanoe@gmail.com" className="text-gray-600 hover:text-gold transition-colors break-all">
-                    frenchcreekcanoe@gmail.com
+                                  <a href="mailto:frenchcreekcanoetradingpost@gmail.com" className="text-gray-600 hover:text-gold transition-colors break-all">
+                frenchcreekcanoetradingpost@gmail.com
                     </a>
                   </div>
                 </div>
@@ -152,7 +152,7 @@ export default function ContactPage() {
                     Call Now
                   </a>
                   <a 
-                    href="mailto:frenchcreekcanoe@gmail.com"
+                    href="mailto:frenchcreekcanoetradingpost@gmail.com"
                     className="flex-1 px-6 py-3 bg-white text-navy font-semibold rounded-lg border-2 border-navy hover:bg-navy hover:!text-white transition-all duration-300 text-center"
                   >
                     Send Email
